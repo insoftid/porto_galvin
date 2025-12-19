@@ -92,46 +92,122 @@ function CertificateModal({ certificate, onClose }) {
 }
 
 export default function Certificates() {
-    // TODO: Replace with your actual certificates
-    // Add your certificate images to /public/img/ folder
     const certificates = [
         {
             id: 1,
-            title: "Web Development Fundamentals",
-            issuer: "Coursera",
-            date: "January 2024",
-            image: "/img/cert-web.jpg", // Replace with your certificate image
-            credentialId: "ABC123XYZ",
-            description: "Comprehensive course covering HTML, CSS, JavaScript, and modern web development practices.",
-            skills: ["HTML", "CSS", "JavaScript", "Responsive Design"],
-            url: "https://www.coursera.org/account/accomplishments/certificate/ABC123XYZ",
+            title: "HCIA-AI V3.5 Course",
+            issuer: "Huawei",
+            date: "2025",
+            image: "/sertifikat/HCIA-AI V3.5 Course.png",
+            description: "Huawei Certified ICT Associate - Artificial Intelligence certification covering AI fundamentals, machine learning, and deep learning concepts.",
+            skills: ["Artificial Intelligence", "Machine Learning", "Deep Learning", "Huawei AI"],
         },
         {
             id: 2,
-            title: "Unity Game Development",
-            issuer: "Udemy",
-            date: "March 2024",
-            image: "/img/cert-unity.jpg", // Replace with your certificate image
-            credentialId: "UNI456DEF",
-            description: "Advanced Unity development course focusing on 3D game mechanics and optimization.",
-            skills: ["Unity", "C#", "3D Modeling", "Game Design"],
-            url: "https://www.udemy.com/certificate/UNI456DEF",
+            title: "HCIA-IoT V3.0 Course",
+            issuer: "Huawei",
+            date: "2025",
+            image: "/sertifikat/HCIA-IoT V3.0 Course.png",
+            description: "Huawei Certified ICT Associate - Internet of Things certification covering IoT architecture, protocols, and applications.",
+            skills: ["Internet of Things", "IoT Architecture", "IoT Protocols", "Smart Devices"],
         },
         {
             id: 3,
-            title: "Database Management",
-            issuer: "LinkedIn Learning",
-            date: "May 2024",
-            image: "/img/cert-database.jpg", // Replace with your certificate image
-            credentialId: "DB789GHI",
-            description: "In-depth training on SQL, database design, and optimization techniques.",
-            skills: ["SQL", "Database Design", "MySQL", "PostgreSQL"],
-            url: "https://www.linkedin.com/learning/certificates/DB789GHI",
+            title: "HCIA-Security V4.0 Course",
+            issuer: "Huawei",
+            date: "2025",
+            image: "/sertifikat/HCIA-Security V4.0 Course.png",
+            description: "Huawei Certified ICT Associate - Security certification covering network security, cryptography, and security management.",
+            skills: ["Network Security", "Cryptography", "Security Management", "Cybersecurity"],
         },
-        // Add more certificates here following the same structure
+        {
+            id: 4,
+            title: "Artificial Intelligence and Applications",
+            issuer: "Huawei",
+            date: "2025",
+            image: "/sertifikat/Artificial Intelligence and Applications.png",
+            description: "Comprehensive course on AI applications in real-world scenarios and industry use cases.",
+            skills: ["AI Applications", "Machine Learning", "AI Solutions", "Industry AI"],
+        },
+        {
+            id: 5,
+            title: "Internet of Things Technology and Applications",
+            issuer: "Huawei",
+            date: "2025",
+            image: "/sertifikat/Internet of Things Technology and Applications.png",
+            description: "Advanced course covering IoT technologies and their practical applications in various industries.",
+            skills: ["IoT Technology", "Smart Systems", "IoT Applications", "Connected Devices"],
+        },
+        {
+            id: 6,
+            title: "Overview of AI",
+            issuer: "Huawei",
+            date: "2025",
+            image: "/sertifikat/Overview of AI.png",
+            description: "Introduction to Artificial Intelligence concepts, methodologies, and future trends.",
+            skills: ["AI Fundamentals", "AI Concepts", "AI Trends", "Machine Learning Basics"],
+        },
+        {
+            id: 7,
+            title: "Overview of IoT Technologies",
+            issuer: "Huawei",
+            date: "2025",
+            image: "/sertifikat/Overview of IoT Technologies.png",
+            description: "Comprehensive overview of Internet of Things technologies and ecosystem.",
+            skills: ["IoT Overview", "IoT Ecosystem", "Smart Technology", "Connected Systems"],
+        },
+        {
+            id: 8,
+            title: "Overview of IoT Technologies (CRA Training Program)",
+            issuer: "Huawei",
+            date: "2025",
+            image: "/sertifikat/Overview of IoT Technologies(CRA Training Program).png",
+            description: "Specialized IoT technologies training as part of the CRA (Certified Regional Academy) program.",
+            skills: ["IoT Technologies", "CRA Program", "IoT Training", "Smart Solutions"],
+        },
+        {
+            id: 9,
+            title: "AI Basic",
+            issuer: "Huawei",
+            date: "2025",
+            image: "/sertifikat/Al Basic.png",
+            description: "Foundational course covering basic concepts and principles of Artificial Intelligence.",
+            skills: ["AI Basics", "AI Principles", "Machine Learning Intro", "AI Fundamentals"],
+        },
+        {
+            id: 10,
+            title: "CCNA - Introduction to Networks",
+            issuer: "Cisco Networking Academy",
+            date: "2025",
+            image: "/sertifikat/CCNA-_Introduction_to_Networks_certificate_galvinahmad-students-unnes-ac-id_3d0576e2-3b1e-44d7-a197-aab6fa37577a.pdf",
+            credentialId: "3d0576e2-3b1e-44d7-a197-aab6fa37577a",
+            description: "Cisco Certified Network Associate certification covering network fundamentals, IP addressing, and network protocols.",
+            skills: ["Networking", "TCP/IP", "Network Protocols", "Cisco", "Network Configuration"],
+            isPdf: true,
+        },
+        {
+            id: 11,
+            title: "Belajar Dasar Visualisasi Data",
+            issuer: "Dicoding Indonesia",
+            date: "2024",
+            image: "/sertifikat/Belajar Dasar Visualisasi Data.pdf",
+            description: "Fundamental course on data visualization techniques and best practices for presenting data insights.",
+            skills: ["Data Visualization", "Data Analysis", "Charts & Graphs", "Data Presentation"],
+            isPdf: true,
+        },
     ];
 
     const [selectedCert, setSelectedCert] = useState(null);
+
+    const handleCertificateClick = (cert) => {
+        if (cert.isPdf) {
+            // Open PDF in new tab
+            window.open(cert.image, '_blank');
+        } else {
+            // Show modal for images
+            setSelectedCert(cert);
+        }
+    };
 
     return (
         <section id="certificates" className="mx-auto max-w-6xl px-6 py-24">
@@ -156,17 +232,31 @@ export default function Certificates() {
                         {/* Certificate Preview */}
                         <button
                             type="button"
-                            onClick={() => setSelectedCert(cert)}
+                            onClick={() => handleCertificateClick(cert)}
                             className="relative block w-full text-left cursor-pointer"
                             aria-label={`View certificate: ${cert.title}`}
                         >
                             <div className="aspect-[16/11] w-full overflow-hidden bg-zinc-800">
-                                <img
-                                    src={cert.image}
-                                    alt={cert.title}
-                                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.05]"
-                                    loading="lazy"
-                                />
+                                {cert.isPdf ? (
+                                    // PDF Placeholder
+                                    <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-zinc-800 to-zinc-900">
+                                        <div className="text-center">
+                                            <svg className="w-20 h-20 mx-auto text-sky-400/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 13h6m-6 4h6" />
+                                            </svg>
+                                            <p className="mt-3 text-sm text-zinc-400 font-medium">PDF Certificate</p>
+                                            <p className="mt-1 text-xs text-zinc-500">Click to view</p>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <img
+                                        src={cert.image}
+                                        alt={cert.title}
+                                        className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.05]"
+                                        loading="lazy"
+                                    />
+                                )}
                             </div>
 
                             {/* Overlay gradient */}
@@ -177,7 +267,7 @@ export default function Certificates() {
                                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                 </svg>
-                                Certified
+                                {cert.isPdf ? 'PDF' : 'Certified'}
                             </span>
                         </button>
 
@@ -214,10 +304,10 @@ export default function Certificates() {
                             <div className="mt-auto pt-6">
                                 <button
                                     type="button"
-                                    onClick={() => setSelectedCert(cert)}
+                                    onClick={() => handleCertificateClick(cert)}
                                     className="w-full inline-flex items-center justify-center gap-2 rounded-md border border-sky-400/40 px-5 py-2.5 text-sm font-medium text-sky-400 hover:bg-sky-400/10 hover:border-sky-400 transition"
                                 >
-                                    View Details
+                                    {cert.isPdf ? 'Open PDF' : 'View Details'}
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                     </svg>
