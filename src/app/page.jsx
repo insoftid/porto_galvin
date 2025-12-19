@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import AboutMe from "@/components/AboutMe";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import Certificates from "@/components/Certificates";
 import Contacts from "@/components/Contacts";
 import Footer from "@/components/Footer";
 
@@ -15,6 +16,7 @@ export default function Home() {
       <AboutMe />
       <Skills />
       <Projects />
+      <Certificates />
       <Contacts />
       <Footer />
     </main>

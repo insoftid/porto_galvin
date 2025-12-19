@@ -7,6 +7,7 @@ export default function Navbar() {
                     <a href="#about" className="hover:text-white hover:underline transition duration-300">About</a>
                     <a href="#skills" className="hover:text-white hover:underline transition duration-300">Skills</a>
                     <a href="#projects" className="hover:text-white hover:underline transition duration-300">Projects</a>
+                    <a href="#certificates" className="hover:text-white hover:underline transition duration-300">Certificates</a>
                     <a href="#contact" className="hover:text-white hover:underline transition duration-300">Contact</a>
                 </nav>
                 <a

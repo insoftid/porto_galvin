@@ -21,20 +21,21 @@ function ModalProject({ project, onClose }) {
 
     return (
         <div
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4 md:p-6 backdrop-blur-sm"
             onClick={onClose}
         >
             <div
-                className="w-full max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 text-white shadow-2xl"
+                className="w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl border border-white/10 bg-zinc-900 text-white shadow-2xl scrollbar-hide"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Carousel */}
                 <div className="relative">
-                    <div className="aspect-[16/8] w-full overflow-hidden">
+                    <div className="aspect-[16/8] w-full overflow-hidden bg-zinc-800">
                         <img
                             src={images[idx]}
                             alt={`${project.title} screenshot ${idx + 1}`}
-                            className="h-full w-full object-cover"
+                            className="h-full w-full object-contain"
                             loading="lazy"
                         />
                     </div>
@@ -143,11 +144,11 @@ export default function Projects() {
             title: "MEDIPET CARE",
             category: "Web",
             role: "All Roles",
-            // DESKRIPSI SINGKAT (card)
-            desc: "Platform digital terintegrasi untuk manajemen kesehatan hewan peliharaan.",
-            // DESKRIPSI DETAIL (modal)
+            // SHORT DESCRIPTION (card)
+            desc: "Integrated digital platform for pet health management.",
+            // DETAILED DESCRIPTION (modal)
             detail:
-                "MedipetCare adalah aplikasi berbasis web dan mobile yang berfungsi sebagai platform digital terintegrasi untuk manajemen kesehatan hewan peliharaan. Aplikasi ini menghubungkan pemilik hewan, dokter hewan, dan klinik dalam satu sistem terpusat, sehingga proses pencatatan, pemantauan, dan pengelolaan layanan kesehatan hewan menjadi lebih cepat, rapi, dan terkoordinasi.",
+                "MedipetCare is a web and mobile-based application that serves as an integrated digital platform for pet health management. This application connects pet owners, veterinarians, and clinics in one centralized system, making the process of recording, monitoring, and managing pet health services faster, more organized, and coordinated.",
             images: [
                 "/img/medipetcare-1.jpeg",
                 "/img/medipetcare-2.jpeg",
@@ -160,9 +161,9 @@ export default function Projects() {
             image: "/img/medipetcare-1.jpeg",
             stack: ["Web App", "Mobile App", "UI/UX", "Database"],
             highlights: [
-                "Manajemen data kesehatan hewan terpusat",
-                "Integrasi pemilik, dokter, dan klinik",
-                "Mendukung platform web dan mobile",
+                "Centralized pet health data management",
+                "Integration of owners, veterinarians, and clinics",
+                "Supports both web and mobile platforms",
             ],
             repo: "https://github.com/AhmadGalvin/MEDIPET-CARE",
             repoLabel: "GitHub",
@@ -172,11 +173,11 @@ export default function Projects() {
             title: "Ocean Guardian",
             category: "Game",
             role: "Programmer & Level Designer",
-            // DESKRIPSI SINGKAT (card)
-            desc: "Game simulasi petualangan 3D bertema pelestarian lingkungan laut.",
-            // DESKRIPSI DETAIL (modal)
+            // SHORT DESCRIPTION (card)
+            desc: "3D adventure simulation game themed around ocean environmental conservation.",
+            // DETAILED DESCRIPTION (modal)
             detail:
-                "The Ocean Guardian adalah game simulasi petualangan 3D berbasis Unity yang mengangkat isu pelestarian lingkungan. Pemain berperan sebagai penjaga teluk yang dapat menjelajahi daratan dan mengendarai kapal untuk membersihkan sampah laut. Game ini dilengkapi sistem Quest modular serta fitur upgrade kapal, menggabungkan edukasi lingkungan dengan mekanika permainan yang menarik dan adiktif.",
+                "The Ocean Guardian is a Unity-based 3D adventure simulation game that addresses environmental conservation issues. Players take on the role of a bay guardian who can explore land and operate boats to clean up ocean waste. The game features a modular Quest system and boat upgrade features, combining environmental education with engaging and addictive gameplay mechanics.",
             images: [
                 "/img/ocean-1.jpeg",
                 "/img/ocean-2.jpeg",
@@ -187,9 +188,9 @@ export default function Projects() {
             image: "/img/ocean-1.jpeg",
             stack: ["Unity", "3D Game", "Quest System", "Environment Design"],
             highlights: [
-                "Gameplay eksplorasi darat dan laut",
-                "Sistem quest modular",
-                "Fitur upgrade kapal",
+                "Land and sea exploration gameplay",
+                "Modular quest system",
+                "Boat upgrade features",
             ],
             external: {
                 label: "Play on itch.io",
@@ -203,9 +204,9 @@ export default function Projects() {
             title: "Car Purchase Decision",
             category: "Data",
             role: "Developer",
-            desc: "Sistem pendukung keputusan untuk membantu memilih mobil terbaik.",
+            desc: "Decision support system to help choose the best car.",
             detail:
-                "Car Purchase Decision adalah project sistem pendukung keputusan yang membantu pengguna dalam menentukan pilihan mobil berdasarkan beberapa kriteria penilaian. Sistem ini mengolah data dan membandingkan alternatif untuk menghasilkan rekomendasi yang objektif dan terstruktur.",
+                "Car Purchase Decision is a decision support system project that helps users determine car choices based on multiple evaluation criteria. The system processes data and compares alternatives to generate objective and structured recommendations.",
             images: [
                 "/img/car-1.png",
                 "/img/car-2.png",
@@ -214,16 +215,37 @@ export default function Projects() {
             image: "/img/car-1.png",
             stack: ["Decision Support System", "Data Processing"],
             highlights: [
-                "Perbandingan multi-kriteria",
-                "Output berupa ranking/rekomendasi",
-                "Struktur pengambilan keputusan jelas",
+                "Multi-criteria comparison",
+                "Output in ranking/recommendation format",
+                "Clear decision-making structure",
             ],
             repo: "https://github.com/AhmadGalvin/Car-Purchase-Decision",
             repoLabel: "GitHub",
+        },
+        {
+            id: 4,
+            title: "Secondrive",
+            category: "UI/UX",
+            role: "UI/UX Designer",
+            desc: "Used car marketplace platform with user-friendly UI/UX design.",
+            detail:
+                "Secondrive is a used car marketplace website. I was responsible for creating the UI/UX as part of a team for a database course final project.",
+            images: [
+                "/img/secondrive-1.jpeg",
+                "/img/secondrive-2.jpeg",
+                "/img/secondrive-3.jpeg",
+            ],
+            image: "/img/secondrive-1.jpeg",
+            stack: ["UI/UX Design", "Figma", "Web Design"],
+            highlights: [
+                "Interface design for used car marketplace platform",
+                "Team collaboration in database course final project",
+                "Focus on user experience and ease of navigation",
+            ],
         }
     ];
 
-    const filters = ["All", "Web", "Game", "Data"];
+    const filters = ["All", "Web", "Game", "Data", "UI/UX"];
     const [activeFilter, setActiveFilter] = useState("All");
     const [selected, setSelected] = useState(null);
 
@@ -242,7 +264,7 @@ export default function Projects() {
                     </span>
                 </h2>
                 <p className="mx-auto mt-3 max-w-2xl text-sm text-zinc-400 sm:text-base">
-                    Filter kategori dan klik card untuk melihat detail + carousel screenshot.
+                    Filter by category and click on a card to view details and screenshot carousel.
                 </p>
 
                 <div className="mt-8 flex justify-center">
@@ -275,11 +297,11 @@ export default function Projects() {
                             className="relative block w-full text-left cursor-pointer"
                             aria-label={`View details for ${p.title}`}
                         >
-                            <div className="aspect-[16/10] w-full overflow-hidden">
+                            <div className="aspect-[16/10] w-full overflow-hidden bg-zinc-800">
                                 <img
                                     src={p.image}
                                     alt={p.title}
-                                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                                    className="h-full w-full transition duration-500 group-hover:scale-[1.03] object-cover"
                                     loading="lazy"
                                 />
                             </div>
@@ -317,23 +339,26 @@ export default function Projects() {
 
                             {/* CTA - Always at bottom */}
                             <div className="mt-auto pt-6 flex justify-center gap-3">
-                                <a
-                                    href={p.repo || "#"}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center gap-2 rounded-md bg-sky-500 px-5 py-2.5 text-sm font-semibold text-black hover:bg-sky-400 transition"
-                                    onClick={(e) => e.stopPropagation()}
-                                >
-                                    {p.repoLabel || "GitHub"}
-                                </a>
+                                {/* Hide repo button for UI/UX projects */}
+                                {p.category !== "UI/UX" && (
+                                    <a
+                                        href={p.repo || "#"}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center justify-center gap-2 rounded-md bg-sky-500 px-5 py-2.5 text-sm font-semibold text-black hover:bg-sky-400 transition"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        {p.repoLabel || "GitHub"}
+                                    </a>
+                                )}
 
-                                {/* Optional: tombol detail (kalau mau ada 2 tombol) */}
+                                {/* Detail button */}
                                 <button
                                     type="button"
                                     onClick={() => setSelected(p)}
                                     className="inline-flex items-center justify-center rounded-md border border-white/15 px-5 py-2.5 text-sm font-medium text-white hover:bg-white/10 transition"
                                 >
-                                    Lihat Detail
+                                    View Details
                                 </button>
                             </div>
                         </div>
